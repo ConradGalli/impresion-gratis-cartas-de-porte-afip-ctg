@@ -1,0 +1,231 @@
+<html>
+<head>
+	<title>Impresion carta de porte v0.1</title>
+<style>
+
+@media print 
+{
+	.no-print, .no-print * 
+	{
+		visibility: hidden;
+		//display: none !important;
+	}
+	input {
+		border: 0;
+	}
+}
+.no-print, .no-print * 
+{
+	background-color: #C6C6C6;
+}
+
+
+body {
+	padding-left: 1.2cm;
+	padding-top: 1.3cm;
+	width: 21cm;
+	height: 29.7cm;
+}
+
+input.header {
+	height: 100%
+}
+div#div0 {
+	height: 2.2cm;
+}
+
+input.s_header {
+	color: gray;
+	width: 100%;
+//	background-color: grey;
+	font-weight: bold;
+
+}
+input.s_header#header_datos_granos{
+	width: 60%;
+}
+
+div#div1 {
+	height: 7cm;
+}
+input.s1_texto_label {
+	height: 10%;
+	width: 4.2cm;
+}
+input.s1_texto {
+	height: 10%;
+	width: 9cm;
+}
+
+input.s1_cuit_label {
+	height: 10%;
+	width: 1.9cm;
+}
+input.s1_cuit {
+	height: 10%;
+	width: 3.4cm;
+}
+
+</style>
+<script>
+
+var localStorageEnabled = false;
+if (typeof(Storage) !== "undefined") {
+	localStorageEnabled = true;
+} else {
+	alert("Advertencia: Persistencia local no disponible");
+}
+
+function restaurarValor(aTextObj) {
+if (localStorageEnabled) {
+	var val = localStorage.getItem(aTextObj.name);
+	console.log(aTextObj + ", val: "+val);
+	aTextObj.value = val;
+} else {
+	// No disponible
+}
+}
+
+function recordarValor(aTextObj) {
+if (localStorageEnabled) {
+	localStorage.setItem(aTextObj.name, aTextObj.value);
+	console.log("Recordado valor ("+aTextObj.value+") para "+aTextObj.name);
+} else {
+	console.log("recordar valor no disponible");
+	// No disponible
+}
+}
+
+function validarCuit(aTextObj) {
+
+	console.log(aTextObj);
+	console.log(aTextObj.value);
+	
+	recordarValor(aTextObj);
+	
+	return false;
+}
+
+</script>
+</head>
+<body>
+	<div id="div0">
+		<input type="text" class="h_afip header no-print" value="AFIP" readonly="readonly">
+		<input type="text" style=" height: 40%; vertical-align: bottom; text-align: center " placeholder="CTG" >
+	</div>
+	<div id="div1">
+		<input type=text" readonly="readonly" value="1 Datos de intervinientes en el traslado de granos" class="s_header no-print"><br>
+		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="titular carta de porte">
+			<input type="text" class="s1_texto" placeholder="titular carta de porte" onchange="recordarValor(this);" name="txt_titular">
+			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro">
+			<input type="number" class="s1_cuit" placeholder="CUIT" onchange="validarCuit(this);" name="cuit_titular"> <br>
+		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Intermediario">
+			<input type="text" class="s1_texto" placeholder="Intermediario">
+			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro">
+			<input type="number" class="s1_cuit" placeholder="CUIT" onchange="validarCuit(this);"> <br>
+		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Remitente Comercial">
+			<input type="text" class="s1_texto" placeholder="Remitente Comercial">
+			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro">
+			<input type="number" class="s1_cuit" placeholder="CUIT" onchange="validarCuit(this);"> <br>
+		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Corredor">
+			<input type="text" class="s1_texto" placeholder="Corredor">
+			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro">
+			<input type="number" class="s1_cuit" placeholder="CUIT" onchange="validarCuit(this);"> <br>
+		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Representante/Entregador">
+			<input type="text" class="s1_texto" placeholder="Representante/Entregador">
+			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro">
+			<input type="number" class="s1_cuit" placeholder="CUIT" onchange="validarCuit(this);"> <br>
+		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Destinatario">
+			<input type="text" class="s1_texto" placeholder="Destinatario">
+			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro">
+			<input type="number" class="s1_cuit" placeholder="CUIT" onchange="validarCuit(this);"> <br>
+		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Destino">
+			<input type="text" class="s1_texto" placeholder="Destino">
+			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro">
+			<input type="number" class="s1_cuit" placeholder="CUIT" onchange="validarCuit(this);"> <br>
+		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Transportista">
+			<input type="text" class="s1_texto" placeholder="Transportista">
+			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro">
+			<input type="number" class="s1_cuit" placeholder="CUIT" onchange="validarCuit(this);"> <br>
+		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Chofer">
+			<input type="text" class="s1_texto" placeholder="Chofer">
+			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro">
+			<input type="number" class="s1_cuit" placeholder="CUIT" onchange="validarCuit(this);"> <br>
+	</div>
+	<div id="div2">
+		<input type=text" readonly="readonly" value="2 Datos de los granos/especies transportadas" class="s_header no-print" id="header_datos_granos"> <input type="text" class="no-print" value="Cosecha" style="width: 3cm"> <input type="text" id="inputCosecha"><br>
+		
+		<input type="text" class="texto_label no-print" readonly="readonly" value="Grano/Especie">
+		<input type="text" class="texto" placeholder="Soja">
+		<input type="text" class="texto_label no-print" readonly="readonly" value="Tipo">
+		<input type="text" class="texto" placeholder="Poroto">
+
+
+		<input type="text" class="texto_label no-print" readonly="readonly" value="La carga sera pesada en destino">
+
+	</div>
+	<div id="div3">
+		<input type=text" readonly="readonly" value="3 Lugar de destino de los granos" class="s_header no-print"><br>
+		
+		<table rows="2" cols="4">
+			<tr><td rowspan="2"  style="height: 100%">
+				<input type="text" readonly="readonly" value="Direccion" class="no-print" style="height: 100%">
+				<input type="text" class="" id="s3_direccion" style="height: 100%">
+			</td> <td>
+				<input type="text" readonly="readonly" value="Localidad" class="no-print">
+				<input type="text" class="" id="s3_localidad">
+			</td> </tr>
+			<tr><td>
+				<input type="text" readonly="readonly" value="Provincia" class="no-print">
+				<input type="text" class="" id="s3_Provincia">
+			</td></tr>
+		</table>
+
+		<br>
+	</div>
+	<div id="div4">
+		<input type=text" readonly="readonly" value="4 Datos del transporte" class="s_header no-print"><br>
+		<input type="text" class="no-print" readonly="readonly" value="Camion" class="s4_col1">
+		<input type="text" class="s4_col2">
+		<input type="text" class="no-print" readonly="readonly" value="Flete Pag" class="s4_col3">
+		<input type="text" style="width: 1cm">
+		<input type="text" class="no-print" readonly="readonly" value="Flete a Pag" >
+		<input type="text" style="width: 1cm">
+		<br>
+		
+		<input type="text" class="no-print" readonly="readonly" value="Acoplado" class="s4_col1">
+		<input type="text" class="s4_col2">
+		<input type="text" class="no-print" readonly="readonly" value="Tarifa de Referencia" class="s4_col3">
+		<input type="text" class="s4_col4">
+		<br>
+		
+		<input type="text" class="no-print" readonly="readonly" value="Km a recorrer" class="s4_col1">
+		<input type="text" class="s4_col2">
+		<input type="text" class="no-print" readonly="readonly" value="Tarifa" class="s4_col3">
+		<input type="text" class="s4_col4">
+
+	</div>
+
+	<a href="sms://+5491159550919?body=hola%20mundo">SMS</a>
+
+<script>
+
+if (localStorageEnabled ) {
+	/*
+	var allInputs = document.getElementsByName("input");
+	for ( i in allInputs) {
+		restaurarValor(i);
+	}
+	*/
+	restaurarValor(document.querySelector("input[name='txt_titular']"));
+	restaurarValor(document.querySelector("input[name='cuit_titular']"));
+} else {
+	// nada
+}
+
+// Setear default para cosecha si no esta definido (primera vez)
+
+</script>
+
+</body>
+</html>
