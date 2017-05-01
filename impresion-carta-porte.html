@@ -32,6 +32,7 @@ input.header {
 }
 div#div0 {
 	height: 2.2cm;
+	vertical-align: bottom;
 }
 
 input.s_header {
@@ -112,44 +113,52 @@ function validarCuit(aTextObj) {
 	<div id="div0">
 		<input type="text" class="h_afip header no-print" value="AFIP" readonly="readonly">
 		<input type="text" style=" height: 40%; vertical-align: bottom; text-align: center " placeholder="CTG" >
+		
+			<span class="no-print">Fecha Carga:</span> 
+		
+			<input type="number" name="dia_fecha_carga" min="1" max="31"> 
+			<span class="no-print">/</span> 
+			<input type="number" name="mes_fecha_carga" min="1" max="12"> 
+			<span class="no-print">/</span> 
+			<input type="number" name="anio_fecha_carga" min="2015" max="2018"> 
 	</div>
 	<div id="div1">
-		<input type=text" readonly="readonly" value="1 Datos de intervinientes en el traslado de granos" class="s_header no-print"><br>
-		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="titular carta de porte">
+		<input type=text" readonly="readonly" value="1 Datos de intervinientes en el traslado de granos" class="s_header no-print" tabindex="-1"><br>
+		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="titular carta de porte" tabindex="-1">
 			<input type="text" class="s1_texto" placeholder="titular carta de porte" onchange="recordarValor(this);" name="txt_titular">
-			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro">
+			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro" tabindex="-1">
 			<input type="number" class="s1_cuit" placeholder="CUIT" onchange="validarCuit(this);" name="cuit_titular"> <br>
-		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Intermediario">
+		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Intermediario" tabindex="-1">
 			<input type="text" class="s1_texto" placeholder="Intermediario">
-			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro">
+			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro" tabindex="-1">
 			<input type="number" class="s1_cuit" placeholder="CUIT" onchange="validarCuit(this);"> <br>
-		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Remitente Comercial">
+		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Remitente Comercial" tabindex="-1">
 			<input type="text" class="s1_texto" placeholder="Remitente Comercial">
-			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro">
+			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro" tabindex="-1">
 			<input type="number" class="s1_cuit" placeholder="CUIT" onchange="validarCuit(this);"> <br>
-		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Corredor">
+		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Corredor" tabindex="-1">
 			<input type="text" class="s1_texto" placeholder="Corredor">
-			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro">
+			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro" tabindex="-1">
 			<input type="number" class="s1_cuit" placeholder="CUIT" onchange="validarCuit(this);"> <br>
-		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Representante/Entregador">
+		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Representante/Entregador" tabindex="-1">
 			<input type="text" class="s1_texto" placeholder="Representante/Entregador">
-			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro">
+			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro" tabindex="-1">
 			<input type="number" class="s1_cuit" placeholder="CUIT" onchange="validarCuit(this);"> <br>
-		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Destinatario">
+		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Destinatario" tabindex="-1">
 			<input type="text" class="s1_texto" placeholder="Destinatario">
-			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro">
+			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro" tabindex="-1">
 			<input type="number" class="s1_cuit" placeholder="CUIT" onchange="validarCuit(this);"> <br>
-		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Destino">
+		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Destino" tabindex="-1">
 			<input type="text" class="s1_texto" placeholder="Destino">
-			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro">
+			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro" tabindex="-1">
 			<input type="number" class="s1_cuit" placeholder="CUIT" onchange="validarCuit(this);"> <br>
-		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Transportista">
+		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Transportista" tabindex="-1">
 			<input type="text" class="s1_texto" placeholder="Transportista">
-			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro">
+			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro" tabindex="-1">
 			<input type="number" class="s1_cuit" placeholder="CUIT" onchange="validarCuit(this);"> <br>
-		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Chofer">
+		<input type="text" class="s1_texto_label no-print" readonly="readonly" value="Chofer" tabindex="-1">
 			<input type="text" class="s1_texto" placeholder="Chofer">
-			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro">
+			<input type="text" class="s1_cuit_label no-print" readonly="readonly" value="CUIT Nro" tabindex="-1">
 			<input type="number" class="s1_cuit" placeholder="CUIT" onchange="validarCuit(this);"> <br>
 	</div>
 	<div id="div2">
@@ -206,7 +215,10 @@ function validarCuit(aTextObj) {
 
 	</div>
 
-	<a href="sms://+5491159550919?body=hola%20mundo">SMS</a>
+		<div class="no-print>
+<a href="sms://+5491112345678?body=hola%20mundo">SMS</a>
+
+		</div>
 
 <script>
 
