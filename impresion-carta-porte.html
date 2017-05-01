@@ -31,7 +31,7 @@ input.header {
 	height: 100%
 }
 div#div0 {
-	height: 2.2cm;
+	height: 2.4cm;
 	vertical-align: bottom;
 }
 
@@ -47,7 +47,7 @@ input.s_header#header_datos_granos{
 }
 
 div#div1 {
-	height: 7cm;
+	height: 6.8cm;
 }
 input.s1_texto_label {
 	height: 10%;
@@ -65,6 +65,10 @@ input.s1_cuit_label {
 input.s1_cuit {
 	height: 10%;
 	width: 3.4cm;
+}
+
+table.direccion {
+	border-spacing: 0;
 }
 
 </style>
@@ -112,7 +116,7 @@ function validarCuit(aTextObj) {
 <body>
 	<div id="div0">
 		<input type="text" class="h_afip header no-print" value="AFIP" readonly="readonly">
-		<input type="text" style=" height: 40%; vertical-align: bottom; text-align: center " placeholder="CTG" >
+		<input type="text" style=" height: 40%; width: 30%; vertical-align: bottom; text-align: center " placeholder="CTG" >
 		
 			<span class="no-print">Fecha Carga:</span> 
 		
@@ -121,6 +125,9 @@ function validarCuit(aTextObj) {
 			<input type="number" name="mes_fecha_carga" min="1" max="12"> 
 			<span class="no-print">/</span> 
 			<input type="number" name="anio_fecha_carga" min="2015" max="2018"> 
+	</div>
+	<div id="div0b" class="no-print" style="height: 0.8cm; text-align: center; vertical-align: middle; ">
+		CARTA DE PORTE PARA EL TRANSPORTE AUTOMOTOR DE GRANOS
 	</div>
 	<div id="div1">
 		<input type=text" readonly="readonly" value="1 Datos de intervinientes en el traslado de granos" class="s_header no-print" tabindex="-1"><br>
@@ -176,17 +183,17 @@ function validarCuit(aTextObj) {
 	<div id="div3">
 		<input type=text" readonly="readonly" value="3 Lugar de destino de los granos" class="s_header no-print"><br>
 		
-		<table rows="2" cols="4">
+		<table rows="2" cols="4" class="direccion">
 			<tr><td rowspan="2"  style="height: 100%">
-				<input type="text" readonly="readonly" value="Direccion" class="no-print" style="height: 100%">
-				<input type="text" class="" id="s3_direccion" style="height: 100%">
+				<input type="text" readonly="readonly" value="Direccion" class="no-print" style="height: 100%; width: 1.2cm">
+				<input type="text" class="" id="s3_direccion" style="height: 100%; width: 8.8cm;">
 			</td> <td>
-				<input type="text" readonly="readonly" value="Localidad" class="no-print">
-				<input type="text" class="" id="s3_localidad">
+				<input type="text" readonly="readonly" value="Localidad" class="no-print" style="width: 2.1cm">
+				<input type="text" class="" id="s3_localidad" style="width: 4.9cm">
 			</td> </tr>
 			<tr><td>
-				<input type="text" readonly="readonly" value="Provincia" class="no-print">
-				<input type="text" class="" id="s3_Provincia">
+				<input type="text" readonly="readonly" value="Provincia" class="no-print" style="width: 2.1cm">
+				<input type="text" class="" id="s3_Provincia" style="width: 4.9cm">
 			</td></tr>
 		</table>
 
@@ -215,9 +222,19 @@ function validarCuit(aTextObj) {
 
 	</div>
 
-		<div class="no-print>
+		<div class="no-print">
 <a href="sms://+5491112345678?body=hola%20mundo">SMS</a>
 
+<br>
+<button>Borrar todo</button>
+<br>
+<button>Nuevo camion</button>
+
+<h1>temp calculadora porcentaje A4</h1>
+<input type="number" placeholder="ancho milimetros" onKeyUp='
+input = document.getElementById("porcentajeAnchoMM");
+input.value = this.value * 100 / 210;
+'><input type="text" id="porcentajeAnchoMM">
 		</div>
 
 <script>
