@@ -25,12 +25,17 @@ body {
 	padding-top: 1.3cm;
 	width: 21cm;
 	height: 29.7cm;
+	margin: 0;
 }
 
+input:focus {
+	background: #FFFF00;
+}
 input.header {
 	height: 100%
 }
 div#div0 {
+	width: 18.6cm;
 	height: 2.4cm;
 	vertical-align: bottom;
 }
@@ -115,7 +120,7 @@ function validarCuit(aTextObj) {
 </head>
 <body>
 	<div id="div0">
-		<input type="text" class="h_afip header no-print" value="AFIP" readonly="readonly">
+		<input type="text" class="h_afip header no-print" value="AFIP" readonly="readonly" tabindex="-1">
 		<input type="text" style=" height: 40%; width: 30%; vertical-align: bottom; text-align: center " placeholder="CTG" >
 		
 			<span class="no-print">Fecha Carga:</span> 
@@ -169,30 +174,30 @@ function validarCuit(aTextObj) {
 			<input type="number" class="s1_cuit" placeholder="CUIT" onchange="validarCuit(this);"> <br>
 	</div>
 	<div id="div2">
-		<input type=text" readonly="readonly" value="2 Datos de los granos/especies transportadas" class="s_header no-print" id="header_datos_granos"> <input type="text" class="no-print" value="Cosecha" style="width: 3cm"> <input type="text" id="inputCosecha"><br>
+		<input type=text" readonly="readonly" value="2 Datos de los granos/especies transportadas" class="s_header no-print" id="header_datos_granos" tabindex="-1"> <input type="text" class="no-print" value="Cosecha" style="width: 3cm" readonly="readonly" tabindex="-1"> <input type="text" id="inputCosecha"><br>
 		
-		<input type="text" class="texto_label no-print" readonly="readonly" value="Grano/Especie">
+		<input type="text" class="texto_label no-print" readonly="readonly" value="Grano/Especie" tabindex="-1">
 		<input type="text" class="texto" placeholder="Soja">
-		<input type="text" class="texto_label no-print" readonly="readonly" value="Tipo">
+		<input type="text" class="texto_label no-print" readonly="readonly" value="Tipo" tabindex="-1">
 		<input type="text" class="texto" placeholder="Poroto">
 
 
-		<input type="text" class="texto_label no-print" readonly="readonly" value="La carga sera pesada en destino">
+		<input type="text" class="texto_label no-print" readonly="readonly" value="La carga sera pesada en destino" tabindex="-1">
 
 	</div>
 	<div id="div3">
-		<input type=text" readonly="readonly" value="3 Lugar de destino de los granos" class="s_header no-print"><br>
+		<input type=text" readonly="readonly" value="3 Lugar de destino de los granos" class="s_header no-print" tabindex="-1"><br>
 		
 		<table rows="2" cols="4" class="direccion">
 			<tr><td rowspan="2"  style="height: 100%">
-				<input type="text" readonly="readonly" value="Direccion" class="no-print" style="height: 100%; width: 1.2cm">
+				<input type="text" readonly="readonly" value="Direccion" class="no-print" style="height: 100%; width: 1.2cm" tabindex="-1">
 				<input type="text" class="" id="s3_direccion" style="height: 100%; width: 8.8cm;">
 			</td> <td>
-				<input type="text" readonly="readonly" value="Localidad" class="no-print" style="width: 2.1cm">
+				<input type="text" readonly="readonly" value="Localidad" class="no-print" style="width: 2.1cm" tabindex="-1">
 				<input type="text" class="" id="s3_localidad" style="width: 4.9cm">
 			</td> </tr>
 			<tr><td>
-				<input type="text" readonly="readonly" value="Provincia" class="no-print" style="width: 2.1cm">
+				<input type="text" readonly="readonly" value="Provincia" class="no-print" style="width: 2.1cm" tabindex="-1">
 				<input type="text" class="" id="s3_Provincia" style="width: 4.9cm">
 			</td></tr>
 		</table>
@@ -200,24 +205,24 @@ function validarCuit(aTextObj) {
 		<br>
 	</div>
 	<div id="div4">
-		<input type=text" readonly="readonly" value="4 Datos del transporte" class="s_header no-print"><br>
-		<input type="text" class="no-print" readonly="readonly" value="Camion" class="s4_col1">
+		<input type=text" readonly="readonly" value="4 Datos del transporte" class="s_header no-print" tabindex="-1"><br>
+		<input type="text" class="no-print" readonly="readonly" value="Camion" class="s4_col1" tabindex="-1">
 		<input type="text" class="s4_col2">
-		<input type="text" class="no-print" readonly="readonly" value="Flete Pag" class="s4_col3">
+		<input type="text" class="no-print" readonly="readonly" value="Flete Pag" class="s4_col3" tabindex="-1">
 		<input type="text" style="width: 1cm">
-		<input type="text" class="no-print" readonly="readonly" value="Flete a Pag" >
+		<input type="text" class="no-print" readonly="readonly" value="Flete a Pag"  tabindex="-1">
 		<input type="text" style="width: 1cm">
 		<br>
 		
-		<input type="text" class="no-print" readonly="readonly" value="Acoplado" class="s4_col1">
+		<input type="text" class="no-print" readonly="readonly" value="Acoplado" class="s4_col1" tabindex="-1">
 		<input type="text" class="s4_col2">
-		<input type="text" class="no-print" readonly="readonly" value="Tarifa de Referencia" class="s4_col3">
+		<input type="text" class="no-print" readonly="readonly" value="Tarifa de Referencia" class="s4_col3" tabindex="-1">
 		<input type="text" class="s4_col4">
 		<br>
 		
-		<input type="text" class="no-print" readonly="readonly" value="Km a recorrer" class="s4_col1">
+		<input type="text" class="no-print" readonly="readonly" value="Km a recorrer" class="s4_col1" tabindex="-1">
 		<input type="text" class="s4_col2">
-		<input type="text" class="no-print" readonly="readonly" value="Tarifa" class="s4_col3">
+		<input type="text" class="no-print" readonly="readonly" value="Tarifa" class="s4_col3" tabindex="-1">
 		<input type="text" class="s4_col4">
 
 	</div>
