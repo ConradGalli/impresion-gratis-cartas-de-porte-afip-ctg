@@ -79,6 +79,9 @@ table.direccion {
 </style>
 <script>
 
+var especies = ["Trigo", "Sorgo", "Soja", "Maiz", "Girasol", "Colsa 00", "Cebada forrajera", "Cebada cervecera", "Cartamo" ];
+var tipos = ["Alto valor", "Alto valor NT", "Candeal", "Duro", "Linoleico", "No apto malteria", "oficial", "oleico", "Pan", "Pan LP", "Poroto", "Proteo", "Sap", "Scarlett", "Semilla", "Shakira"];
+
 var localStorageEnabled = false;
 if (typeof(Storage) !== "undefined") {
 	localStorageEnabled = true;
@@ -94,6 +97,17 @@ if (localStorageEnabled) {
 } else {
 	// No disponible
 }
+}
+
+/* Pone la fecha actual en los campos */
+function completarFecha() {
+	var hoy = new Date();
+	var d = document.querySelector("input[name='dia_fecha_carga']");
+	d.value = hoy.getDate();
+	var m = document.querySelector("input[name='mes_fecha_carga']");
+	m.value = ( 1 + hoy.getMonth() );
+	var a = document.querySelector("input[name='anio_fecha_carga']");
+	a.value = hoy.getFullYear();
 }
 
 function recordarValor(aTextObj) {
@@ -256,6 +270,8 @@ if (localStorageEnabled ) {
 } else {
 	// nada
 }
+
+completarFecha();
 
 // Setear default para cosecha si no esta definido (primera vez)
 
